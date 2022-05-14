@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('model/donhang/updatedonhang', 'Mycontroller@updatedonhang')->name('updatedonhang');
+
+
+Route::get('model/donhang/getdataAlldonhangAdmin', 'Mycontroller@getdataAlldonhangAdmin')->name('getdataAlldonhangAdmin');
 Route::post('model/taikhoan/dangkytaikhoan', 'Mycontroller@dangkytaikhoan')->name('dangkytaikhoan');
 Route::get('model/taikhoan/getdatataikhoan','Mycontroller@getdatataikhoan')->name('getdatataikhoan');
 Route::post('model/sanpham/timkim', 'Mycontroller@timkim')->name('timkim');

@@ -19,11 +19,11 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'http://localhost/cuahangbandienthoai/public/*',
-        'http://localhost/cuahangbandienthoai/public/model/sanpham/huawei',
-        'http://192.168.1.102/cuahangbandienthoai/public/*',
-        'http://192.168.1.32/cuahangbandienthoai/public/*',
-        'http://192.168.1.8/cuahangbandienthoai/public/*',
+        // 'http://localhost/cuahangbandienthoai/public/*',
+        // 'http://localhost/cuahangbandienthoai/public/model/sanpham/huawei',
+        // 'http://192.168.1.102/cuahangbandienthoai/public/*',
+         'http://192.168.1.26/cuahangsach/public/*',
+        'http://192.168.1.18/cuahangsach/public/*',
        
     ];
 }

@@ -13,6 +13,16 @@ use App\danhgia;
 
 class Mycontroller extends Controller
 {
+    public function updatedonhang(Request $request){
+        $table=dondathang::where('id','=',$request->iddonhang)->update(['trinhtrang'=>'Đang Vận Chuyển']);
+        if($table){
+            echo "succes";
+        }
+    }
+    public function getdataAlldonhangAdmin(){
+        $table=dondathang::orderBy('id','desc')->get();
+        echo json_encode($table);
+    }
     public function getdatadanhgia(Request $request){ 
         if($request->has('masanpham')){
             $masanpham=$request->masanpham;
@@ -157,7 +167,7 @@ class Mycontroller extends Controller
         }
     }
     public function huawei(){
-    	$table=sanpham::where('IDSP','=',4)->take(2)->get();
+    	$table=sanpham::where('IDSP','=',4)->take(4)->get();
     	echo json_encode($table);
     }
     public function timkim(Request $request){
@@ -168,19 +178,19 @@ class Mycontroller extends Controller
         }
     }
     public function xiaomi(){
-    	$table=sanpham::where('IDSP','=',5)->take(2)->get();
+    	$table=sanpham::where('IDSP','=',5)->take(4)->get();
     	echo json_encode($table);
     }
     public function realme(){
-    	$table=sanpham::where('IDSP','=',6)->take(2)->get();
+    	$table=sanpham::where('IDSP','=',6)->take(4)->get();
     	echo json_encode($table);
     }
     public function vivo(){
-    	$table=sanpham::where('IDSP','=',7)->take(2)->get();
+    	$table=sanpham::where('IDSP','=',7)->take(4)->get();
     	echo json_encode($table);
     }
      public function sony(){
-    	$table=sanpham::where('IDSP','=',8)->take(2)->get();
+    	$table=sanpham::where('IDSP','=',8)->take(4)->get();
     	echo json_encode($table);
     }
     public function sanpham(Request $request){
@@ -282,6 +292,7 @@ class Mycontroller extends Controller
             $table->email=$text_Email;
             $table->dia_chi=$text_Adress;
             $table->hinhanh="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuI3QeqYJXfQ7QAvSnH1t_Wy5UxBdd6lLTW-MZxIPrE90-1IeYlQ&s";
+            $table->loai=0;
             $table->save();
             if($table){
                 echo "thanh cong";
